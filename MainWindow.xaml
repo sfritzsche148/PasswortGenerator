@@ -28,6 +28,8 @@
 
         <Button Content="Generieren" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Click="Generate_Click"/>
 
-        <TextBlock x:Name="resultBlock" Text="Dein Passwort:" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="resultBlock" Text="Dein Passwort:" Grid.Row="2"/>
+        <Button x:Name="copy" Content="kopieren" Grid.Row="2" Grid.Column="1" Click="copy_Click"/>
+        <TextBlock x:Name="bestätigung" Grid.Column="2" Grid.Row="2"/>
     </Grid>
 </Window>

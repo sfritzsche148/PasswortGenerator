@@ -24,12 +24,13 @@ namespace PasswortGenerator
         public MainWindow()
         {
             InitializeComponent();
+
         }
+        string allText = "";
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
 
-            string allText = "";
             double maxLength = lenghtSlider.Value;
 
             char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w' , 'x', 'y' };
@@ -44,8 +45,11 @@ namespace PasswortGenerator
             switch(maxLength)
             {
                 case 8:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 8; i++)
                     {
+
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
 
                         if (letterOrNumberOrSpecialCharacter < 10)
@@ -75,9 +79,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
-                   
+
+
                     break;
                 case 9:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 9; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -110,8 +117,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
+                    
+
                     break;
                 case 10:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 10; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -144,8 +155,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
+                    
+
                     break;
                 case 11:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 11; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -178,8 +193,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
+                    
+
                     break;
                 case 12:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 12; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -212,8 +231,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
+                    
+
                     break;
                 case 13:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 13; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -246,8 +269,12 @@ namespace PasswortGenerator
 
                         allText = resultBlock.Text;
                     }
+                    
+
                     break;
                 case 14:
+                    allText = ""; // Hier wird der TextBlock gelehrt;
+
                     for (int i = 0; i <= 14; i++)
                     {
                         int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
@@ -277,10 +304,20 @@ namespace PasswortGenerator
                             int specialCharacterIndex = random.Next(0, specialCharacters.Length);
                             resultBlock.Text = allText + specialCharacters[specialCharacterIndex];
                         }
+
+                        allText = resultBlock.Text;
+
                     }
+                    
                     break;
             }
 
+        }
+
+        private void copy_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(allText);
+            bestätigung.Text = "Passwort kopiert";
         }
     }
 }
