@@ -50,14 +50,14 @@ namespace PasswortGenerator
                     for (int i = 0; i <= 8; i++)
                     {
 
-                        int letterOrNumberOrSpecialCharacter = random.Next(1, 30);
+                        int letterOrNumberOrSpecialCharacter = random.Next(1, 30); // Hier wird zufällig entschieden ob es ein Buchstabe, Zahl, oder Sonderzeichen wird
 
                         if (letterOrNumberOrSpecialCharacter < 10)
                         {
-                            int letterIndex = random.Next(0, alphabet.Length);
+                            int letterIndex = random.Next(0, alphabet.Length); // Hier wird zufällig, in Abhängigkeit von der alphabet Länge entschieden welcher Buchstabe ausgewählt wird
                             char letter = alphabet[letterIndex];
 
-                            int upOrLowIndex = random.Next(0, 10);
+                            int upOrLowIndex = random.Next(0, 10); // Hier wird zufällig entschieden ob der Buchstabe groß oder klein sein soll
 
                             if (upOrLowIndex <= 5) 
                                 resultBlock.Text = allText + letter.ToString().ToUpper();
@@ -68,16 +68,16 @@ namespace PasswortGenerator
                         }
                         else if (letterOrNumberOrSpecialCharacter <= 20 && letterOrNumberOrSpecialCharacter > 10)
                         {
-                            int numberIndex = random.Next(0, numbers.Length);
+                            int numberIndex = random.Next(0, numbers.Length); // Hier wird zufällig, in Abhängigkeit von der numbers Länge entschieden, welche Ziffer ausgewählt wird
                             resultBlock.Text = allText + numbers[numberIndex];
                            
                         } else
                         {
-                            int specialCharacterIndex = random.Next(0, specialCharacters.Length);
+                            int specialCharacterIndex = random.Next(0, specialCharacters.Length); // Hier wird zufällig, in Abhängigkeit von der specialCharacter Länge entschieden, welches Sonderzeichen ausgewählt wird
                             resultBlock.Text = allText + specialCharacters[specialCharacterIndex];
                         }
 
-                        allText = resultBlock.Text;
+                        allText = resultBlock.Text; // Erst hier wird der Wert von resultBlock.Text auf allText geschrieben, weil hier egal was vorher ausgwählt wurde auf jeden Fall auf allText geschrieben wird
                     }
 
 
